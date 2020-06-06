@@ -33,6 +33,15 @@ export class BookService {
       );
   }
 
+  deleteBook(book: Book): Observable<Book> {
+    const url = `${this.booksUrl}/${book.id}`;
+
+    return this.http.delete<Book>(url,this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Book>('deleteBook'))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

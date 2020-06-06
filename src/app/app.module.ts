@@ -11,15 +11,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { HeaderComponent } from './header/header.component';
 import { NewBookComponent } from './book/new-book/new-book.component';
+import { BookListComponent } from './book/book-list/book-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NewBookComponent,
+    BookListComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,9 @@ import { NewBookComponent } from './book/new-book/new-book.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
     FormsModule,
     HttpClientModule,
   ],
