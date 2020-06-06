@@ -6,6 +6,10 @@ This is part of Javascript Architecture - AJS-201A discipline.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
+## Install
+
+Clone the project and run `npm install`.
+
 ## Development server
 
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
