@@ -1,26 +1,74 @@
 <mat-card class="new-book-card">
   <mat-card-title>Book</mat-card-title>
-  <form class="new-book-form">
+  <form class="new-book-form" name="book" (ngSubmit)="addBook(bookForm)" #bookForm="ngForm">
     <mat-form-field class="new-book-full-width">
-      <mat-label>Name</mat-label>
-      <input matInput placeholder="Ex. Oliver Twist">
+      <mat-label>Title</mat-label>
+      <input
+        name="title"
+        matInput
+        placeholder="Ex. Oliver Twist"
+        [(ngModel)]="model.title"
+        #title="ngModel"
+        required
+      >
+
+      <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.errors.required">
+        Title is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="new-book-full-width">
       <mat-label>Author</mat-label>
-      <input matInput placeholder="Ex. Charles Dickens">
+      <input
+        name="author"
+        matInput
+        placeholder="Ex. Charles Dickens"
+        [(ngModel)]="model.author"
+        #author="ngModel"
+        required
+      >
+      <mat-error *ngIf="author.invalid && (author.dirty || author.touched) && author.errors.required">
+        Author is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="new-book-full-width">
       <mat-label>Publisher</mat-label>
-      <input matInput placeholder="Ex. Richard Bentley">
+      <input
+        name="publisher"
+        matInput
+        placeholder="Ex. Richard Bentley"
+        [(ngModel)]="model.publisher"
+        #publisher="ngModel"
+        required
+      >
+
+      <mat-error *ngIf="publisher.invalid && (publisher.dirty || publisher.touched) && publisher.errors.required">
+        Publisher is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="new-book-full-width">
       <mat-label>Genre</mat-label>
-      <input matInput placeholder="Ex. Serial novel">
+      <input
+        name="genre"
+        matInput
+        placeholder="Ex. Serial novel"
+        [(ngModel)]="model.genre"
+        #genre="ngModel"
+        required
+      >
+      <mat-error *ngIf="genre.invalid && (genre.dirty || genre.touched) && genre.errors.required">
+        Genre is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Save</button>
+    <button
+      type="submit"
+      mat-raised-button color="primary"
+      [disabled]="!bookForm.form.valid"
+    >
+      Save
+    </button>
   </form>
 </mat-card>
